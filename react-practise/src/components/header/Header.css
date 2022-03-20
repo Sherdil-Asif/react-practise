@@ -1,0 +1,82 @@
+.main{
+    margin: 0%;
+    padding: 0%;
+    
+}
+.container{
+    display: flex;
+    margin-left: 35%;
+    
+}
+.horse{
+    margin-left: 2%;
+    position: absolute;
+    bottom: 10px;
+    color: white;
+}
+.hr2{
+    position: absolute;
+    margin-left: 50%;
+   
+    color: white;
+    display: flex;
+    flex-direction: end;
+    
+    
+}
+.hr3{
+    position: absolute;
+    margin-left: 1%;
+    font-weight: 10px;
+    bottom: 10px;
+}
+.hr4{
+    display: flex;
+    position: absolute;
+    margin-left: 53%;
+    color: white;
+   
+   
+}
+.hr5{
+    display: flex;
+    margin-right: 5%;
+    flex-direction: row;
+}
+
+
+.horse2{
+    position: absolute;
+    right: 70%;
+}
+
+/* @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+*{
+	list-style: none;
+	text-decoration: none;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Open Sans', sans-serif;
+}
+body{
+	background: #f5f6fa;
+}
+.wrapper .sidebar{
+	background: rgb(5, 68, 104);
+	position: fixed;
+	top: 43px;
+	left: 0;
+	width: 225px;
+	height: 100%;
+	padding: 20px 0;
+	transition: all 0.5s ease;
+}
+.wrapper .sidebar .profile{
+	margin-bottom: 30px;
+	text-align: center;
+}
+ */
+
+ 
+  
