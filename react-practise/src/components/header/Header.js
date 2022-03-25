@@ -1,9 +1,35 @@
 import React from "react";
 import "./Header.css";
+import List from "./List";
+import { useState } from "react";
 const Header = () => {
+  
+  
+  const [todo, setTodo] = useState("")
+  const [stu,setStu] = useState([])
+ const [flag,setFlag]= useState(true)
+
+//  const menu = () =>{
+//    setFlag(false)
+//  }
+  
+  const sher = () =>{
+    setStu([...stu,todo])
+    setTodo("")
+    // setStu((prevValue) => {
+    //   return[...prevValue,todo]
+    // })
+    // setTodo("")
+    
+    console.log(stu)
+  }
+
   return (
-    <>
-    <div style={{width:"100vw"}}>
+    
+ <>
+   
+   
+    
       <div className="navbar" style={{ height: "10vh", width: "100%" }}>
         <ion-icon
           name="apps-outline"
@@ -97,9 +123,10 @@ const Header = () => {
       </div>
 
       <div className="sidebar">
-        <div className="left">
-          <button style={{ marginRight: "250px" }}>
-            {" "}
+        {/* <div className="left"> */}
+          {/* <div style={{width:"2%"}}>
+          <button onClick={()=>setFlag(!flag)} style={{display:"flex",flexDirection:"row", alignItems:"center", height:"5%", width:"3%", marginRight: "0px" }}>
+            
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="16"
@@ -114,6 +141,12 @@ const Header = () => {
               />
             </svg>
           </button>
+          </div> */}
+       
+                   {/* <div className="center" style={{display:"flex",height:"500%",width:"100%",backgroundColor:"white"}} ></div> */}
+          
+       { flag?  <container>
+         <div style={{display:"flex",flexDirection:"column", alignItems:"center", height:"100%", width:"170%",backgroundColor:"lightgray",maxWidth:"170%",overflow:"hidden",marginTop:"25%"}}>
           <div
             className="tab"
             style={{
@@ -244,7 +277,7 @@ const Header = () => {
               marginTop: "10px",
             }}
           >
-            {" "}
+            
             <a href="">
               {" "}
               <svg
@@ -264,8 +297,185 @@ const Header = () => {
               <a href="#"> New List</a>
             </p>
           </div>
-        </div>
+          </div>
+          </container>
 
+          // </div>
+  :
+        <container2 >
+          <div style={{height:"100%",width:"20%"}}>
+          <div
+            // className="tab"
+            // style={{
+            //   display: "flex",
+            //   alignItems: "start",
+            //   width: "10%",
+            //   marginLeft: "5px",
+            //   marginTop: "20px",
+            // }}
+          >
+            <svg
+              style={{ marginLeft: "10px",marginTop:"100px" ,height:"20px",width:"35px"}}
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              fill="currentColor"
+              class="bi bi-brightness-high"
+              viewBox="0 0 16 16"
+            >
+              <path d="M8 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6zm0 1a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z" />
+            </svg>
+          
+          </div>
+
+          <div
+
+          
+            // className="tab2"
+            // style={{
+            //   display: "flex",
+            //   alignItems: "center",
+            //   width: "100%",
+            //   marginLeft: "10px",
+            //   marginTop: "3px",
+            // }}
+          >
+            <svg
+              style={{ marginLeft: "10px", marginTop: "30px",width:"35px",height:"20px" }}
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              fill="currentColor"
+              class="bi bi-star"
+              viewBox="0 0 16 16"
+            >
+              <path d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.565.565 0 0 0-.163-.505L1.71 6.745l4.052-.576a.525.525 0 0 0 .393-.288L8 2.223l1.847 3.658a.525.525 0 0 0 .393.288l4.052.575-2.906 2.77a.565.565 0 0 0-.163.506l.694 3.957-3.686-1.894a.503.503 0 0 0-.461 0z" />
+            </svg>
+            
+          </div>
+          <div
+            // className="tab3"
+            // style={{
+            //   display: "flex",
+            //   alignItems: "center",
+            //   width: "100%",
+            //   marginLeft: "10px",
+            //   marginTop: "3px",
+            // }}
+          >
+            <svg
+              style={{ marginLeft: "10px", marginTop: "30px" ,width:"35px",height:"20px"}}
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              fill="currentColor"
+              class="bi bi-calendar4-week"
+              viewBox="0 0 16 16"
+            >
+              <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM2 2a1 1 0 0 0-1 1v1h14V3a1 1 0 0 0-1-1H2zm13 3H1v9a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V5z" />
+              <path d="M11 7.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm-3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm-2 3a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm-3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1z" />
+            </svg>
+          
+          </div>
+          <div
+            // className="tab4"
+            // style={{
+            //   display: "flex",
+            //   alignItems: "center",
+            //   width: "100%",
+            //   marginLeft: "10px",
+            //   marginTop: "3px",
+            // }}
+          >
+            <svg
+              style={{ marginLeft: "10px", marginTop: "30px" ,width:"35px",height:"20px" }}
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              fill="currentColor"
+              class="bi bi-person"
+              viewBox="0 0 16 16"
+            >
+              <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z" />
+            </svg>
+            
+          </div>
+          <div
+            // className="tab5"
+            // style={{
+            //   display: "flex",
+            //   alignItems: "center",
+            //   width: "100%",
+            //   marginLeft: "10px",
+            //   marginTop: "3px",
+            // }}
+          >
+            <svg
+              style={{ marginLeft: "10px", marginTop: "30px" ,width:"35px",height:"20px" }}
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              fill="currentColor"
+              class="bi bi-house-door"
+              viewBox="0 0 16 16"
+            >
+              <path d="M8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4.5a.5.5 0 0 0 .5-.5v-4h2v4a.5.5 0 0 0 .5.5H14a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146zM2.5 14V7.707l5.5-5.5 5.5 5.5V14H10v-4a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5v4H2.5z" />
+            </svg>
+            
+          </div>
+
+          <div
+            // className="tab6"
+            // style={{
+            //   display: "flex",
+            //   alignItems: "center",
+            //   width: "100%",
+            //   marginLeft: "10px",
+            //   marginTop: "10px",
+            // }}
+          >
+            
+            <a href="">
+              
+              <svg
+                style={{ marginLeft: "10px", marginTop: "30px" ,width:"35px",height:"20px" }}
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                class="bi bi-plus"
+                viewBox="0 0 16 16"
+              >
+                <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z" />
+              </svg>
+            </a>
+           
+          </div>
+          </div>
+        </container2> 
+          
+          }
+
+<div >
+          <button style={{backgroundColor:"lightblue",marginTop:"5px",borderRadius:"5px"}} onClick={()=>setFlag(!flag)}  >
+            
+            <svg
+              style={{width:"30px",height:"15px",color:"black"}}
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              fill="currentColor"
+              class="bi bi-list"
+              viewBox="0 0 16 16"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"
+              />
+            </svg>
+          </button>
+          </div>
+        
         <div className="center">
           <div
             className="sort"
@@ -279,7 +489,8 @@ const Header = () => {
               <p>
                 <h1 style={{ marginRight: "250px" }}>My Day ...</h1>
               </p>
-            </div>
+            
+           </div>
             <svg
               style={{ marginRight: "5px", marginTop: "20px" }}
               xmlns="http://www.w3.org/2000/svg"
@@ -307,9 +518,23 @@ const Header = () => {
               <path d="M2 6a6 6 0 1 1 10.174 4.31c-.203.196-.359.4-.453.619l-.762 1.769A.5.5 0 0 1 10.5 13a.5.5 0 0 1 0 1 .5.5 0 0 1 0 1l-.224.447a1 1 0 0 1-.894.553H6.618a1 1 0 0 1-.894-.553L5.5 15a.5.5 0 0 1 0-1 .5.5 0 0 1 0-1 .5.5 0 0 1-.46-.302l-.761-1.77a1.964 1.964 0 0 0-.453-.618A5.984 5.984 0 0 1 2 6zm6-5a5 5 0 0 0-3.479 8.592c.263.254.514.564.676.941L5.83 12h4.342l.632-1.467c.162-.377.413-.687.676-.941A5 5 0 0 0 8 1z" />
             </svg>
             <p style={{ marginTop: "16px" }}>Suggestions</p>
+         
+            </div>
+            <div style={{marginTop:"3%",backgroundColor:"lightgray",marginLeft:"5%",padding:"10px",marginRight:"5%"}}>
+              <svg style={{backgroundColor:"lightgray",marginRight:"7%",marginBottom:"5px",height:"20px",width:"40px"}} onClick={()=> sher() } xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-lg" viewBox="0 0 16 16">
+             <path fill-rule="evenodd" d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2Z"/>
+              </svg>
+             <input  style={{width:"60%",border:"none",backgroundColor:"lightgray",width:"80%"}} type="text" name="" id="" placeholder="Add task" value={todo} onChange={(e) => setTodo(e.target.value)}/>
+             </div>
+             {
+               stu.map((item,index)=>{
+                  return <List key={index} item= {item} />
+               })
+             }
+            
           </div>
-        </div>
-
+        
+        
         <div className="right">
           <div style={{ backgroundColor: "white", paddingTop: "10px" }}>
             <div
@@ -562,9 +787,10 @@ const Header = () => {
             </div>
           </div>
         </div>
-      </div>
-      </div>
-    </>
+      
+         </div>
+        
+         </>
   );
 };
 export default Header;

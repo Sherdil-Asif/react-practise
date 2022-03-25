@@ -114,13 +114,15 @@ body{
 
   }
   .sidebar{
-      background-color: brown;
+      background-color: white;
       width: 100%;
+      max-width: 100%;
+      overflow: hidden;
       height: 90vh;
       display: flex;
       
   }
-  .left{
+  /* .left{
     display: flex ;
     flex-direction: column;
     align-items: center ;
@@ -130,7 +132,7 @@ body{
       width: 25%;
       background-color: lightgray
       
-  }
+  } */
   .center{
       height: 100%;
       width: 50%;
@@ -141,7 +143,7 @@ body{
   }
   .right{
    
-    width: 25%;
+    width: 100%;
     overflow: hidden;
       height: 100%;
       max-width: 25%;
